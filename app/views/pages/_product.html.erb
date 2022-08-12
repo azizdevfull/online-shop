@@ -1,0 +1,31 @@
+    <html>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+      
+  </head>
+  <% @products.each do |product| %>
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>    
+    <body class="bodyProject">
+      <div class="box">
+        <div id="card-container">
+          <div id="card">
+            <div class="front face">
+              <h1 class="h1Project" align="center"><%= product.name %></h1>
+              <h1 class="h1Project" align="center"><%= product.description %></h1>
+            </div>
+            <div class="back face">
+              <h1 class="h1Project postname"><%= product.name %></h1>
+              
+              <%# <%= link_to "Show", post, class: "d",  %>
+              <%#  %><%= link_to product do%>
+                <i class="date pProject iconify" data-icon="ep:setting"></i>
+                <% end %>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </body>
+    </html>
+  <% end %>

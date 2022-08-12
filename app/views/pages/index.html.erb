@@ -1,0 +1,34 @@
+<%= render 'navbar' %>
+
+  <div class="dsp-in"> 
+  
+
+
+<% @products.each do |product| %>
+<div class="card" >
+  <%= link_to  image_tag(product.image,class: "as-item-img img-product") , page_path(product) if product.image.attached?  %>
+  <div class="container">
+  <ul>
+  <h3 ><b><%= product.name %></b></h3>
+    <h6><%= product.price %> Сум</h6>
+    <p><%= product.description %></p>
+    </ul>
+<p>
+<%= link_to product.product_category.categorier.category.name, product.product_category.categorier.category %>><%= link_to product.product_category.categorier.name,product.product_category.categorier %>><%= link_to product.product_category.name, product.product_category %>
+</p>
+
+        <td>
+
+        
+          <%= form_for @order_item, remote: true   do |f|%>
+          <%= f.hidden_field :product_id, :value => product.id %>
+          <%= f.number_field :quantity, :value => 1, :min =>  1%>
+          <%= f.submit "Add to Card ", class: "btn btn-primary"%>
+          <% end %>
+        </td>
+
+  </div>
+</div>
+
+<% end %>
+</div>

@@ -1,0 +1,37 @@
+<div id="<%= dom_id categorier %>">
+
+<p>
+  <strong>Category</strong>
+  <%= link_to categorier.category.name, categorier.category%>><%= link_to categorier.name, categorier %>
+  </p>
+
+<% categorier.product_categories.each do |product_categorier| %>
+
+<p>
+<%= link_to product_categorier.name, product_categorier %>
+<%= link_to "View Category", product_categorier %>
+</p>
+
+<% @products.each do |product| %>
+<% if product.product_category.name == product_categorier.name  %>
+<div class="card">
+  <%= link_to  image_tag(product.image,class: "as-item-img img-product") , product if product.image.attached?  %>
+  <div class="container">
+  <h4><b><%= product.name %></b></h4>
+  
+    <h6><%= product.price %> Сум</h6>
+    <p><%= product.description %></p>
+    
+<p>
+<%= link_to product.product_category.categorier.category.name, product.product_category.categorier.category %>><%= link_to product.product_category.categorier.name,product.product_category.categorier %>><%= link_to product.product_category.name, product.product_category %>
+</p>  
+<% else %>
+
+
+
+<% end %></div>
+</div>
+<% end %>
+
+<% end %>
+</div>

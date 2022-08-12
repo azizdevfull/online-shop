@@ -1,0 +1,16 @@
+<div id="<%= dom_id category %>">
+  <p>
+    <strong>Category Name:</strong>
+    <%= category.name %>
+  </p>
+
+<% category.categoriers.each do |categorier| %>
+
+<p>
+<%=link_to categorier.name,categorier  %> 
+<%# | <%= link_to "View Category", categorier %>
+</p>
+
+<% end %>
+
+</div>

@@ -1,0 +1,26 @@
+<div id="<%= dom_id product_category %>">
+    <strong>Category:</strong>
+   <%= link_to product_category.categorier.category.name, product_category.categorier.category %>><%= link_to product_category.categorier.name, product_category.categorier %>><%=link_to product_category.name, product_category %>
+</p>
+
+<% product_category.products.each do |product| %>
+
+
+
+<p>
+<%= link_to  image_tag(product.image,class: "as-item-img img-product") , product if product.image.attached?  %>
+</p>
+
+<p>
+<%= product.name %>
+<%# <%= link_to "View Telephone", product %>
+</p>
+<p>
+<%= product.price %>
+</p>
+<p>
+<%= product.description %>
+</p>
+<% end %>
+
+</div>

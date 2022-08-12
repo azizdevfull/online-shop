@@ -1,0 +1,16 @@
+<%= render 'pages/navbar' %>
+
+<% if notice %>
+  <p style="color: green"><%= notice %></p>
+<% end %>
+
+
+
+<%= render @categorier %>
+
+<div>
+  <%= link_to "Edit this categorier", edit_categorier_path(@categorier) %> |
+  <%= link_to "Back to categoriers", categoriers_path %>
+
+  <%= button_to "Destroy this categorier", @categorier, method: :delete %>
+</div>

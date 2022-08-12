@@ -1,0 +1,29 @@
+<div id="<%= dom_id product %>">
+<%= render 'pages/navbar' %>
+<%= stylesheet_link_tag "product_img" %>
+  <p>
+    <strong>Name:</strong>
+    <%= product.name %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= product.price %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= product.description %>
+  </p>
+
+  <p>
+  <%= image_tag(product.image,class: "img-product") if product.image.attached?  %>
+  
+  </p>
+ 
+<p>
+    <strong>Category:</strong>
+    <%= link_to product.product_category.categorier.category.name, product.product_category.categorier.category %>><%= link_to product.product_category.categorier.name,product.product_category.categorier %>><%= link_to product.product_category.name, product.product_category %>
+</p>
+
+</div>

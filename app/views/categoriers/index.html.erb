@@ -1,0 +1,18 @@
+<%= render 'pages/navbar' %>
+<% if notice %>
+<p style="color: green"><%= notice %></p>
+
+<% end %>
+
+<h1>Categoriers</h1>
+
+<div id="categoriers">
+  <% @categoriers.each do |categorier| %>
+    <%= render categorier %>
+    <p>
+      <%= link_to "Show this categorier", categorier %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New categorier", new_categorier_path %>
